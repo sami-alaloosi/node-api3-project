@@ -1,5 +1,5 @@
 // code away!
-
+require('dotenv').config()
 const express = require('express')
 const server = express()
 const cors = require('cors')
@@ -21,7 +21,8 @@ function logger(req, res, next) {
   next()
 }
 
-const port = 8000
+// const port = 8000
+const port = process.env.PORT
 
 server.listen(port, ()=>{
     console.log(`Server listening on port: ${port}`)
